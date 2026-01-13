@@ -1,0 +1,14 @@
+C:\Users\duanh\Desktop\Side Proj\SimpleKVStore\src\main\java\com\haochen\kvstore\api\KVStore.java
+C:\Users\duanh\Desktop\Side Proj\SimpleKVStore\src\main\java\com\haochen\kvstore\benchmark\KVStoreBenchmark.java
+C:\Users\duanh\Desktop\Side Proj\SimpleKVStore\src\main\java\com\haochen\kvstore\core\InMemoryKVStore.java
+C:\Users\duanh\Desktop\Side Proj\SimpleKVStore\src\main\java\com\haochen\kvstore\eviction\EvictionPolicy.java
+C:\Users\duanh\Desktop\Side Proj\SimpleKVStore\src\main\java\com\haochen\kvstore\eviction\FIFOPolicy.java
+C:\Users\duanh\Desktop\Side Proj\SimpleKVStore\src\main\java\com\haochen\kvstore\eviction\LFUPolicy.java
+C:\Users\duanh\Desktop\Side Proj\SimpleKVStore\src\main\java\com\haochen\kvstore\eviction\LRUPolicy.java
+C:\Users\duanh\Desktop\Side Proj\SimpleKVStore\src\main\java\com\haochen\kvstore\eviction\RandomPolicy.java
+C:\Users\duanh\Desktop\Side Proj\SimpleKVStore\src\main\java\com\haochen\kvstore\exception\CapacityExceededException.java
+C:\Users\duanh\Desktop\Side Proj\SimpleKVStore\src\main\java\com\haochen\kvstore\exception\KeyNotFoundException.java
+C:\Users\duanh\Desktop\Side Proj\SimpleKVStore\src\main\java\com\haochen\kvstore\exception\KVStoreException.java
+C:\Users\duanh\Desktop\Side Proj\SimpleKVStore\src\main\java\com\haochen\kvstore\metrics\KVStoreMetrics.java
+C:\Users\duanh\Desktop\Side Proj\SimpleKVStore\src\main\java\com\haochen\kvstore\metrics\KVStoreMetricsSnapshot.java
+C:\Users\duanh\Desktop\Side Proj\SimpleKVStore\src\main\java\com\haochen\kvstore\model\KVEntry.java

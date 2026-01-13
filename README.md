@@ -90,10 +90,13 @@ TTL-based expiration is **orthogonal** to capacity-based eviction:
 - Eviction policies determine which valid entry should be removed when the
   store reached capacity.
 
-Expired entries are removed using a **lazy expiration strategy**. That is,
-entries are only checked and removed upon access or prior to capacity-based
-eviction. This design avoids background cleanup threads while ensuring that
-expired entries do not participate in eviction decisions.
+Expired entries are removed using a **lazy expiration strategy**.
+Entries are checked and removed upon access, lookup, iteration, or
+explicit size inspection.
+
+The store does not proactively sweep expired entries on every put
+operation. As a result, eviction policies may be invoked before all
+expired entries are physically removed.
 
 When a key expires:
 - `get(key)` throws a `KeyNotFoundException`
@@ -175,6 +178,10 @@ The LFU eviction policy is implemented with an O(1) access and update path.
 - When multiple keys share the same frequency, eviction is resolved
   deterministically based on insertion order within the frequency bucket.
 
+Updating an existing key via `put` resets its access frequency to 1,
+treating the update as a cache refresh rather than a continuation of
+historical access patterns.
+
 This design avoids heap-based implementations and ensures predictable
 performance under high access rates.
 
@@ -246,9 +253,9 @@ entries to expire naturally, at the cost of a lower hit rate under random access
 patterns. The observed overhead from lazy expiration is minimal and does not
 significantly impact overall system performance.
 
-Under random access workloads, LFU exhibits similar or slightly improved hit
-rates compared to LRU when access frequency is skewed, at the cost of higher
-metadata maintenance overhead.
+Under random access workloads with skewed access distributions, LFU
+exhibits similar or slightly improved hit rates compared to LRU, at the
+cost of higher metadata maintenance overhead.
 
 ## Design Tradeoffs
 
@@ -294,7 +301,8 @@ eviction policy implementations without modification.
 
 Possible extensions include:
 - Thread-safe implementation
-- Additional eviction policies (ARC(Adaptive Replacement Cache) CLOCK / CLOCK-pro)
+- Background expiration or time-wheel based cleanup
+- Additional eviction policies (ARC, CLOCK, CLOCK-Pro)
 - Persistence or write-ahead logging
 - Concurrent metrics collection
 

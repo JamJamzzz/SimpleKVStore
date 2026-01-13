@@ -1,0 +1,15 @@
+com\haochen\kvstore\exception\CapacityExceededException.class
+com\haochen\kvstore\metrics\KVStoreMetrics.class
+com\haochen\kvstore\metrics\KVStoreMetricsSnapshot.class
+com\haochen\kvstore\core\InMemoryKVStore.class
+com\haochen\kvstore\exception\KVStoreException.class
+com\haochen\kvstore\eviction\LRUPolicy$Node.class
+com\haochen\kvstore\model\KVEntry.class
+com\haochen\kvstore\eviction\RandomPolicy.class
+com\haochen\kvstore\exception\KeyNotFoundException.class
+com\haochen\kvstore\eviction\LRUPolicy.class
+com\haochen\kvstore\benchmark\KVStoreBenchmark.class
+com\haochen\kvstore\eviction\EvictionPolicy.class
+com\haochen\kvstore\api\KVStore.class
+com\haochen\kvstore\eviction\LFUPolicy.class
+com\haochen\kvstore\eviction\FIFOPolicy.class
